@@ -1,0 +1,107 @@
+@import "../../assets/variables.scss";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 60px;
+  border-radius: 20px;
+  border: 1px solid $thm-border;
+  max-width: 630px;
+  margin: 20px auto;
+
+  &-input {
+    border: 1px solid $thm-border;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: $thm-font-size;
+
+    &.invalid {
+      background-color: $thm-light-red;
+      border-color: $thm-red;
+    }
+
+    &:hover {
+      border-color: $thm-base;
+    }
+
+    &:focus {
+      border-color: $thm-base;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-mask {
+    margin-bottom: 16px;
+  }
+
+  &-action {
+    display: flex;
+    align-items: center;
+
+    &-btn {
+      flex-basis: 50%;
+      width: 100%;
+      border-radius: 20px;
+      margin-top: 16px;
+      padding: 8px 32px;
+      color: $thm-white;
+      border: none;
+      background-color: $thm-base;
+      cursor: pointer;
+
+      &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+
+      &:first-child {
+        margin-right: 16px;
+      }
+    }
+  }
+}
+
+:host ::ng-deep .form-mask .p-inputtext {
+  border: 1px solid $thm-border;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: $thm-font-size;
+
+  &:hover {
+    border-color: $thm-base;
+  }
+
+  &:focus {
+    border-color: $thm-base;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+:host ::ng-deep .form-mask.invalid .p-inputtext {
+  border-color: $thm-red;
+  background-color: $thm-light-red;
+}
+
+:host ::ng-deep .p-toast-message-success {
+  background-color: $thm-light-green;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+:host ::ng-deep .p-toast-message-content {
+  span {
+    margin-right: 8px;
+  }
+}

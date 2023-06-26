@@ -1,0 +1,58 @@
+<form [formGroup]="userForm" (ngSubmit)="updateUser()" class="form">
+  <h2>Edit User</h2>
+  <input
+    type="email"
+    class="form-input"
+    pInputText
+    [readOnly]="true"
+    formControlName="email"
+    placeholder="E-mail"
+  />
+
+  <input
+    type="text"
+    class="form-input"
+    formControlName="name"
+    pInputText
+    [ngClass]="{ invalid: userForm.get('name')?.errors }"
+    placeholder="Name"
+    maxlength="255"
+  />
+
+  <input
+    type="text"
+    class="form-input"
+    formControlName="surname"
+    [ngClass]="{ invalid: userForm.get('surname')?.errors }"
+    pInputText
+    placeholder="Surname"
+    maxlength="255"
+  />
+
+  <p-inputMask
+    class="form-mask"
+    placeholder="phone"
+    [ngClass]="{ invalid: userForm.get('phone')?.errors }"
+    mask="+7 (999) 999 99 99"
+    formControlName="phone"
+  ></p-inputMask>
+
+  <input
+    type="text"
+    class="form-input"
+    formControlName="link"
+    [ngClass]="{ invalid: userForm.get('link')?.errors }"
+    pInputText
+    placeholder="Link"
+  />
+
+  <div class="form-action">
+    <button type="submit" [disabled]="userForm.invalid" class="form-action-btn">
+      save
+    </button>
+    <button type="button" (click)="cancel()" class="form-action-btn">
+      cancel
+    </button>
+  </div>
+</form>
+<p-toast position="top-center"></p-toast>

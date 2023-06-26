@@ -1,0 +1,32 @@
+<div class="auth">
+  <form [formGroup]="authForm" (ngSubmit)="login()" class="auth-form">
+    <h4>Authorization</h4>
+
+    <input
+      pInputText
+      placeholder="E-mail"
+      formControlName="email"
+      class="auth-form-input"
+      [ngClass]="{ invalid: authForm.errors }"
+      type="text"
+    />
+
+    <span class="p-input-icon-right">
+      <i
+        (click)="isShowPassword = !isShowPassword"
+        [ngClass]="isShowPassword ? 'pi pi-eye-slash' : 'pi pi-eye'"
+      ></i>
+      <input
+        pInputText
+        [type]="isShowPassword ? 'text' : 'password'"
+        placeholder="Password"
+        formControlName="password"
+        class="auth-form-input"
+        [ngClass]="{ invalid: authForm.errors }"
+      />
+    </span>
+
+    <button class="auth-form-button" type="submit">Login</button>
+  </form>
+</div>
+<p-toast position="top-center"></p-toast>

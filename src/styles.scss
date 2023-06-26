@@ -1,0 +1,23 @@
+@import "./assets/variables.scss";
+@import "primeicons/primeicons.css";
+
+body {
+  margin: 0;
+}
+
+a {
+  color: $thm-link;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px;
+  background-color: $thm-white;
+  height: 100%;
+}
+
+root {
+  height: 100vh;
+  display: block;
+}
