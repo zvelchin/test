@@ -38,7 +38,6 @@ const routes: Routes = [
         data: { title: 'Profile' },
       },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: '**', redirectTo: 'home', pathMatch: 'full' },
     ],
   },
 ];
