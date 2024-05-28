@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { RootRoutingModule } from './root-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RootComponent } from './root.component';
 import { NotFoundModule } from './app/not-found/not-found.module';
+import { RootRoutingModule } from './root.routes';
 
 @NgModule({
   declarations: [RootComponent],

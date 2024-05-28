@@ -1,9 +1,8 @@
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { isAuthorized, isUnauthorized } from './service/auth.guard';
 import { NotFoundComponent } from './app/not-found/not-found.component';
+import { isUnauthorized, isAuthorized } from './service/auth.guard';
 
-const routes: Routes = [
+const rootRoutes: Routes = [
   {
     path: 'auth',
     canMatch: [isUnauthorized],
@@ -19,8 +18,4 @@ const routes: Routes = [
   { path: '**', redirectTo: '404' },
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-})
-export class RootRoutingModule {}
+export const RootRoutingModule = RouterModule.forRoot(rootRoutes);
